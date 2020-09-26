@@ -16,30 +16,12 @@ function clearWeather() {
     })
 }
 
-function renderButtons() {
-    $("#searchHistory").empty();
-    for (let i = 0; i < citys.length; i++) {
-        const a = $("<button>");
-        a.addClass("city-btn");
-        a.attr("data-name", citys[i]);
-        a.text(citys[i]);
-        $("#searchHistory").append(a)
-        const cityInput = $("#city-input").val().trim();
-        citys.push(cityInput)
-
-    }
-}
-
 $(document).on("click", ".city-btn", getWeatherInfo);
 renderButtons();
 function getWeatherInfo() {
 
-
-
-
-
     var city = $("#city-input").val().trim();
-    var APIKey = "07a20a4e47e01a7a29d322ba253e32a7";
+    
     var weatherQueryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
     $.ajax({
         url: weatherQueryURL,
@@ -91,13 +73,7 @@ function getWeatherInfo() {
         $("#current-weather").append(humidityDiv);
         $("#current-weather").append(windSpeedDiv);
 
-        $("#searchHistory").append("<button id='cityHistory'>")
-        $("#cityHistory").text(cityName)
-
     })
-
-
-
 }
 
 function renderButtons() {
