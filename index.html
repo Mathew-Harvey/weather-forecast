@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,46 +12,53 @@
   <link rel="stylesheet" href="./assets/style.css" />
   <title>Weather Forecast</title>
 </head>
+
 <body>
 
-<div class="container-fluid">
+  <div class="container-fluid">
     <div class="container">
-        <div class="row">
-          <div class="col-10" id= "header">
-            <h1>Weather Dashboard</h1>
-          </div>
-          <div class="col-2" id= "currentTime">
-                  </div>
+      <div class="row">
+        <div class="col-10" id="header">
+          <h1>Weather Dashboard</h1>
         </div>
-        <div class="row">
-          <div class="col-3" id= "city">
-            <form id="citySelect-form">
+        <div class="col-2" id="currentTime">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3" id="city">
+          <form id="citySelect-form">
             <label for="city-input">Search for a City</label>
             <input type="text" id="city-input" placeholder="type name of city here">
             <br>
-      
+
             <button id="add-city" type="submit" class="fas fa-search city-btn"> </button>
             <button id="clear-weather" type="submit" class="fas fa-trash-alt"> </button>
             <div id="searchHistory"></div>
-           
+
           </form>
-      
-          </div>
-          <div class="col-9" id= "weather-container">
-              <div id="current-weather"></div>
-              <div id="forecast-weather"></div>
-            2 of 2
-          </div>
-        
+
         </div>
+        <div class="col-9 id="weather-container">
+          <div id="current-weather"></div>
+          <div id="day1"></div>
+          <div id="day2"></div>
+          <div id="day3"></div>
+          <div id="day4"></div>
+          <div id="day5"></div>
+
+   
+        </div>
+
       </div>
+    </div>
 
 
- </div>
+  </div>
 
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="./assets/script.js"></script>
 </body>
+
 </html>
