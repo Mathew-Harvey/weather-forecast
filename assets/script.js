@@ -51,7 +51,7 @@ function getWeatherInfo() {
 
         var cityName = response.name;
         var Date = moment().format('MMMM Do YYYY');
-        var tempCelcius = "Temperature: " + ((response.main.temp - 273.15).toFixed(0)) + " degrees celsius";
+        var tempCelcius = "Temperature: " + ((response.main.temp - 273.15).toFixed(0)) + " C";
         var humidity = "Humidity: " + (response.main.humidity) + " %";
         var windSpeed = "Wind Speed: " + ((response.wind.speed * 3.6).toFixed(1)) + " km/h";
 
@@ -97,7 +97,7 @@ function getWeatherInfo() {
         var day1Date = response.list[5].dt_txt;
         var day1DateShort = day1Date.slice(0, 10)
         var day1Weather = response.list[5].weather[0].description;
-        var day1TempCelcius = "Temperature: " + ((response.list[5].main.temp - 273.15).toFixed(0)) + " degrees celsius";
+        var day1TempCelcius = "Temperature: " + ((response.list[5].main.temp - 273.15).toFixed(0)) + " C";
         var day1Humidity = "Humidity: " + (response.list[5].main.humidity) + " %";
 
 
@@ -131,7 +131,7 @@ function getWeatherInfo() {
         var day2Date = response.list[12].dt_txt;
         var day2DateShort = day2Date.slice(0, 10)
         var day2Weather = response.list[12].weather[0].description;
-        var day2TempCelcius = "Temperature: " + ((response.list[12].main.temp - 273.15).toFixed(0)) + " degrees celsius";
+        var day2TempCelcius = "Temperature: " + ((response.list[12].main.temp - 273.15).toFixed(0)) + " C";
         var day2Humidity = "Humidity: " + (response.list[12].main.humidity) + " %";
 
 
@@ -164,7 +164,7 @@ function getWeatherInfo() {
         var day3Date = response.list[21].dt_txt;
         var day3DateShort = day3Date.slice(0, 10)
         var day3Weather = response.list[21].weather[0].description;
-        var day3TempCelcius = "Temperature: " + ((response.list[21].main.temp - 273.15).toFixed(0)) + " degrees celsius";
+        var day3TempCelcius = "Temperature: " + ((response.list[21].main.temp - 273.15).toFixed(0)) + " C";
         var day3Humidity = "Humidity: " + (response.list[21].main.humidity) + " %";
 
 
@@ -195,9 +195,9 @@ function getWeatherInfo() {
  
  
          var day4Date = response.list[30].dt_txt;
-         var day4DateShort = day3Date.slice(0, 10)
+         var day4DateShort = day4Date.slice(0, 10)
          var day4Weather = response.list[30].weather[0].description;
-         var day4TempCelcius = "Temperature: " + ((response.list[30].main.temp - 273.15).toFixed(0)) + " degrees celsius";
+         var day4TempCelcius = "Temperature: " + ((response.list[30].main.temp - 273.15).toFixed(0)) + " C";
          var day4Humidity = "Humidity: " + (response.list[30].main.humidity) + " %";
  
  
@@ -228,9 +228,9 @@ function getWeatherInfo() {
  
  
          var day5Date = response.list[37].dt_txt;
-         var day5DateShort = day3Date.slice(0, 10)
+         var day5DateShort = day5Date.slice(0, 10)
          var day5Weather = response.list[37].weather[0].description;
-         var day5TempCelcius = "Temperature: " + ((response.list[37].main.temp - 273.15).toFixed(0)) + " degrees celsius";
+         var day5TempCelcius = "Temperature: " + ((response.list[37].main.temp - 273.15).toFixed(0)) + " C";
          var day5Humidity = "Humidity: " + (response.list[37].main.humidity) + " %";
  
  
@@ -240,10 +240,10 @@ function getWeatherInfo() {
          var ppppppFour = $("<p>").text(day5Humidity);
  
  
-         day4DateDiv.append(ppppppOne);
-         day4WeatherDiv.append(ppppppTwo);
-         day4TempCelciusDiv.append(ppppppThree);
-         day4HumidityDiv.append(ppppppFour);
+         day5DateDiv.append(ppppppOne);
+         day5WeatherDiv.append(ppppppTwo);
+         day5TempCelciusDiv.append(ppppppThree);
+         day5HumidityDiv.append(ppppppFour);
  
  
          $("#day5").append(day5DateDiv);
@@ -254,15 +254,6 @@ function getWeatherInfo() {
 
     })
 }
-
-
-
-
-
-
-
-
-
 
 
 function renderButtons() {
@@ -285,7 +276,7 @@ $("#add-city").on("click", function (event) {
 
     $(".history").on("click", function (event) {
         event.preventDefault();
-        const historyCity = $(".history").last().text()
+        const historyCity = $(this).text()
         $("#city-input").val(historyCity);
         console.log(historyCity)
 

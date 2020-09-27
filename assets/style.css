@@ -1,20 +1,61 @@
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 #day1 {
     float: left;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 3%;
+    background:lightblue;
+    border-radius: 5%;
+    border-color:black;
+    border-style: solid;
+    
+
 }
 
 #day2 {
     float: left;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 3%;
+    background:lightblue;
+    border-radius: 5%;
+    border-color:black;
+    border-style: solid;
 }
 
 #day3 {
     float: left;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 3%;
+    background:lightblue;
+    border-radius: 5%;
+    border-color:black;
+    border-style: solid;
 }
 
 #day4 {
     float: left;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 3%;
+    background:lightblue;
+    border-radius: 5%;
+    border-color:black;
+    border-style: solid;
 }
 
 #day5 {
     float: left;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 3%;
+    background:lightblue;
+    border-radius: 5%;
+    border-color:black;
+    border-style: solid;
 }
-
