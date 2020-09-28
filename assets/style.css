@@ -1,61 +1,84 @@
 
 p {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Baloo Tammudu 2', cursive;
+    font-size: 120%;
+}
+
+#currentTime {
+    font-family: 'Baloo Tammudu 2', cursive;
+    font-size: 150%;
+    padding-top: 2%;
+
+}
+
+#city {
+    background-color: lightgrey;
 }
 
 #day1 {
     float: left;
-    padding-left: 3%;
-    padding-right: 3%;
-    padding-top: 3%;
-    background:lightblue;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 1%;
+    background:blue;
     border-radius: 5%;
-    border-color:black;
-    border-style: solid;
+    font-size: 90%;
+    color: whitesmoke
     
 
 }
 
 #day2 {
     float: left;
-    padding-left: 3%;
-    padding-right: 3%;
-    padding-top: 3%;
-    background:lightblue;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 1%;
+    background:blue;
     border-radius: 5%;
-    border-color:black;
-    border-style: solid;
+    font-size: 90%;
+    color: whitesmoke
 }
 
 #day3 {
     float: left;
-    padding-left: 3%;
-    padding-right: 3%;
-    padding-top: 3%;
-    background:lightblue;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 1%;
+    background:blue;
     border-radius: 5%;
-    border-color:black;
-    border-style: solid;
+    font-size: 90%;
+    color: whitesmoke
 }
 
 #day4 {
     float: left;
-    padding-left: 3%;
-    padding-right: 3%;
-    padding-top: 3%;
-    background:lightblue;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 1%;
+    background:blue;
     border-radius: 5%;
-    border-color:black;
-    border-style: solid;
+    font-size: 90%;
+    color: whitesmoke
 }
 
 #day5 {
     float: left;
-    padding-left: 3%;
-    padding-right: 3%;
-    padding-top: 3%;
-    background:lightblue;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 1%;
+    background:blue;
     border-radius: 5%;
-    border-color:black;
-    border-style: solid;
+    font-size: 90%;
+    color: whitesmoke
 }
+

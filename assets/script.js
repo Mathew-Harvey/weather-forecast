@@ -88,30 +88,26 @@ function getWeatherInfo() {
         console.log(response)
 
         //-- Day 1 [5]
+        var iconURL = "http://openweathermap.org/img/wn/" + response.list[5].weather[0].icon + "@2x.png";
+
         var day1DateDiv = $("<div id='day1Date'>");
-        var day1WeatherDiv = $("<div id='day1Weather'>");
+        var day1WeatherDiv = $('<img src="' + iconURL + '">');
         var day1TempCelciusDiv = $("<div id='day1TemCelcius'>");
         var day1HumidityDiv = $("<div id='day1Humidity'>");
 
 
         var day1Date = response.list[5].dt_txt;
         var day1DateShort = day1Date.slice(0, 10)
-        var day1Weather = response.list[5].weather[0].description;
         var day1TempCelcius = "Temperature: " + ((response.list[5].main.temp - 273.15).toFixed(0)) + " C";
         var day1Humidity = "Humidity: " + (response.list[5].main.humidity) + " %";
 
-
         var ppOne = $("<p>").text(day1DateShort);
-        var ppTwo = $("<p>").text(day1Weather);
         var ppThree = $("<p>").text(day1TempCelcius);
         var ppFour = $("<p>").text(day1Humidity);
 
-
         day1DateDiv.append(ppOne);
-        day1WeatherDiv.append(ppTwo);
         day1TempCelciusDiv.append(ppThree);
         day1HumidityDiv.append(ppFour);
-
 
         $("#day1").append(day1DateDiv);
         $("#day1").append(day1WeatherDiv);
@@ -119,30 +115,27 @@ function getWeatherInfo() {
         $("#day1").append(day1HumidityDiv);
 
 
-        //-- Day 2 [12]
-
+        //-- Day 2 [14]
+        var iconURL2 = "http://openweathermap.org/img/wn/" + response.list[14].weather[0].icon + "@2x.png";
 
         var day2DateDiv = $("<div id='day2Date'>");
-        var day2WeatherDiv = $("<div id='day2Weather'>");
+        var day2WeatherDiv = $('<img src="' + iconURL2 + '">');
         var day2TempCelciusDiv = $("<div id='day2TemCelcius'>");
         var day2HumidityDiv = $("<div id='day2Humidity'>");
 
 
-        var day2Date = response.list[12].dt_txt;
+        var day2Date = response.list[14].dt_txt;
         var day2DateShort = day2Date.slice(0, 10)
-        var day2Weather = response.list[12].weather[0].description;
-        var day2TempCelcius = "Temperature: " + ((response.list[12].main.temp - 273.15).toFixed(0)) + " C";
-        var day2Humidity = "Humidity: " + (response.list[12].main.humidity) + " %";
+        var day2TempCelcius = "Temperature: " + ((response.list[14].main.temp - 273.15).toFixed(0)) + " C";
+        var day2Humidity = "Humidity: " + (response.list[14].main.humidity) + " %";
 
 
         var pppOne = $("<p>").text(day2DateShort);
-        var pppTwo = $("<p>").text(day2Weather);
         var pppThree = $("<p>").text(day2TempCelcius);
         var pppFour = $("<p>").text(day2Humidity);
 
 
         day2DateDiv.append(pppOne);
-        day2WeatherDiv.append(pppTwo);
         day2TempCelciusDiv.append(pppThree);
         day2HumidityDiv.append(pppFour);
 
@@ -154,28 +147,26 @@ function getWeatherInfo() {
 
 
         //-- Day 3 [21]
+        var iconURL3 = "http://openweathermap.org/img/wn/" + response.list[21].weather[0].icon + "@2x.png";
 
         var day3DateDiv = $("<div id='day3Date'>");
-        var day3WeatherDiv = $("<div id='day3Weather'>");
+        var day3WeatherDiv = $('<img src="' + iconURL3 + '">');
         var day3TempCelciusDiv = $("<div id='day3TemCelcius'>");
         var day3HumidityDiv = $("<div id='day3Humidity'>");
 
 
         var day3Date = response.list[21].dt_txt;
         var day3DateShort = day3Date.slice(0, 10)
-        var day3Weather = response.list[21].weather[0].description;
         var day3TempCelcius = "Temperature: " + ((response.list[21].main.temp - 273.15).toFixed(0)) + " C";
         var day3Humidity = "Humidity: " + (response.list[21].main.humidity) + " %";
 
 
         var ppppOne = $("<p>").text(day3DateShort);
-        var ppppTwo = $("<p>").text(day3Weather);
         var ppppThree = $("<p>").text(day3TempCelcius);
         var ppppFour = $("<p>").text(day3Humidity);
 
 
         day3DateDiv.append(ppppOne);
-        day3WeatherDiv.append(ppppTwo);
         day3TempCelciusDiv.append(ppppThree);
         day3HumidityDiv.append(ppppFour);
 
@@ -186,70 +177,66 @@ function getWeatherInfo() {
         $("#day3").append(day3HumidityDiv);
 
 
-         //-- Day 4 [30]
+        //-- Day 4 [30]
+        var iconURL4 = "http://openweathermap.org/img/wn/" + response.list[30].weather[0].icon + "@2x.png";
 
-         var day4DateDiv = $("<div id='day4Date'>");
-         var day4WeatherDiv = $("<div id='day4Weather'>");
-         var day4TempCelciusDiv = $("<div id='day4TemCelcius'>");
-         var day4HumidityDiv = $("<div id='day4Humidity'>");
- 
- 
-         var day4Date = response.list[30].dt_txt;
-         var day4DateShort = day4Date.slice(0, 10)
-         var day4Weather = response.list[30].weather[0].description;
-         var day4TempCelcius = "Temperature: " + ((response.list[30].main.temp - 273.15).toFixed(0)) + " C";
-         var day4Humidity = "Humidity: " + (response.list[30].main.humidity) + " %";
- 
- 
-         var pppppOne = $("<p>").text(day4DateShort);
-         var pppppTwo = $("<p>").text(day4Weather);
-         var pppppThree = $("<p>").text(day4TempCelcius);
-         var pppppFour = $("<p>").text(day4Humidity);
- 
- 
-         day4DateDiv.append(pppppOne);
-         day4WeatherDiv.append(pppppTwo);
-         day4TempCelciusDiv.append(pppppThree);
-         day4HumidityDiv.append(pppppFour);
- 
- 
-         $("#day4").append(day4DateDiv);
-         $("#day4").append(day4WeatherDiv);
-         $("#day4").append(day4TempCelciusDiv);
-         $("#day4").append(day4HumidityDiv);
+        var day4DateDiv = $("<div id='day4Date'>");
+        var day4WeatherDiv = $('<img src="' + iconURL4 + '">');
+        var day4TempCelciusDiv = $("<div id='day4TemCelcius'>");
+        var day4HumidityDiv = $("<div id='day4Humidity'>");
 
 
-         //-- Day 5 [37]
+        var day4Date = response.list[30].dt_txt;
+        var day4DateShort = day4Date.slice(0, 10)
+        var day4TempCelcius = "Temperature: " + ((response.list[30].main.temp - 273.15).toFixed(0)) + " C";
+        var day4Humidity = "Humidity: " + (response.list[30].main.humidity) + " %";
 
-         var day5DateDiv = $("<div id='day5Date'>");
-         var day5WeatherDiv = $("<div id='day5Weather'>");
-         var day5TempCelciusDiv = $("<div id='day5TemCelcius'>");
-         var day5HumidityDiv = $("<div id='day5Humidity'>");
- 
- 
-         var day5Date = response.list[37].dt_txt;
-         var day5DateShort = day5Date.slice(0, 10)
-         var day5Weather = response.list[37].weather[0].description;
-         var day5TempCelcius = "Temperature: " + ((response.list[37].main.temp - 273.15).toFixed(0)) + " C";
-         var day5Humidity = "Humidity: " + (response.list[37].main.humidity) + " %";
- 
- 
-         var ppppppOne = $("<p>").text(day5DateShort);
-         var ppppppTwo = $("<p>").text(day5Weather);
-         var ppppppThree = $("<p>").text(day5TempCelcius);
-         var ppppppFour = $("<p>").text(day5Humidity);
- 
- 
-         day5DateDiv.append(ppppppOne);
-         day5WeatherDiv.append(ppppppTwo);
-         day5TempCelciusDiv.append(ppppppThree);
-         day5HumidityDiv.append(ppppppFour);
- 
- 
-         $("#day5").append(day5DateDiv);
-         $("#day5").append(day5WeatherDiv);
-         $("#day5").append(day5TempCelciusDiv);
-         $("#day5").append(day5HumidityDiv);
+
+        var pppppOne = $("<p>").text(day4DateShort);
+        var pppppThree = $("<p>").text(day4TempCelcius);
+        var pppppFour = $("<p>").text(day4Humidity);
+
+
+        day4DateDiv.append(pppppOne);
+        day4TempCelciusDiv.append(pppppThree);
+        day4HumidityDiv.append(pppppFour);
+
+
+        $("#day4").append(day4DateDiv);
+        $("#day4").append(day4WeatherDiv);
+        $("#day4").append(day4TempCelciusDiv);
+        $("#day4").append(day4HumidityDiv);
+
+
+        //-- Day 5 [37]
+        var iconURL5 = "http://openweathermap.org/img/wn/" + response.list[37].weather[0].icon + "@2x.png";
+
+        var day5DateDiv = $("<div id='day5Date'>");
+        var day5WeatherDiv = $('<img src="' + iconURL5 + '">');
+        var day5TempCelciusDiv = $("<div id='day5TemCelcius'>");
+        var day5HumidityDiv = $("<div id='day5Humidity'>");
+
+
+        var day5Date = response.list[37].dt_txt;
+        var day5DateShort = day5Date.slice(0, 10)
+        var day5TempCelcius = "Temperature: " + ((response.list[37].main.temp - 273.15).toFixed(0)) + " C";
+        var day5Humidity = "Humidity: " + (response.list[37].main.humidity) + " %";
+
+
+        var ppppppOne = $("<p>").text(day5DateShort);
+        var ppppppThree = $("<p>").text(day5TempCelcius);
+        var ppppppFour = $("<p>").text(day5Humidity);
+
+
+        day5DateDiv.append(ppppppOne);
+        day5TempCelciusDiv.append(ppppppThree);
+        day5HumidityDiv.append(ppppppFour);
+
+
+        $("#day5").append(day5DateDiv);
+        $("#day5").append(day5WeatherDiv);
+        $("#day5").append(day5TempCelciusDiv);
+        $("#day5").append(day5HumidityDiv);
 
 
     })
