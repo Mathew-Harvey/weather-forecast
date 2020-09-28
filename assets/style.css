@@ -4,6 +4,48 @@ p {
     font-size: 120%;
 }
 
+H3 {
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+button {
+    font-family: 'Baloo Tammudu 2', cursive;
+    display: block;
+    background-color: white;
+    border-style: solid;
+    color: black;
+    padding: 15px 32px;
+    text-align: left;
+    text-decoration:;
+    display: inline-block;
+    font-size: 16px;
+    width: 255px;
+  }
+
+#header {
+    padding: 20px 35px;
+}
+#add-city {
+    
+
+    background-color: #008CBA;
+    width: 40px;
+    color: white;
+    padding: 14.5px;
+    font-size: 15px;
+    float: right;
+    text-align: center;
+}
+
+
+    #city-input {
+    float: left;
+    border: none;
+    font-size: 17px;
+    padding: 10px 8px;
+    
+}
+
 #currentTime {
     font-family: 'Baloo Tammudu 2', cursive;
     font-size: 150%;
@@ -13,6 +55,10 @@ p {
 
 #city {
     background-color: lightgrey;
+}
+
+#cityName {
+    font-size: 170%;
 }
 
 #day1 {

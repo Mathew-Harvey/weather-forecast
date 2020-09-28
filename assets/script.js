@@ -1,9 +1,9 @@
 var APIKey = "07a20a4e47e01a7a29d322ba253e32a7";
 
-const citys = ["Perth"]
+const citys = ["Clear Search"]
 
 var currentTime = function () {
-    document.querySelector("#currentTime").innerHTML = moment().format('h:mm:ss a');
+    document.querySelector("#currentTime").innerHTML = "Local Time: " + moment().format('h:mm:ss a');
 }
 currentTime();
 setInterval(currentTime, 1000);
@@ -14,42 +14,48 @@ setInterval(currentTime, 1000);
 $(document).on("click", ".city-btn", getWeatherInfo);
 renderButtons();
 
-$(function() {
+$(function () {
     if (localStorage["currentWeather"] != null) {
-       var contentsOfOldDiv = JSON.parse(localStorage["currentWeather"]);    
-       $("#current-weather").html(contentsOfOldDiv);
-      } 
- });
- $(function() {
+        var contentsOfOldDiv = JSON.parse(localStorage["currentWeather"]);
+        $("#current-weather").html(contentsOfOldDiv);
+    }
+});
+$(function () {
     if (localStorage["day1"] != null) {
-       var contentsOfOldDiv = JSON.parse(localStorage["day1"]);    
-       $("#day1").html(contentsOfOldDiv);
-      } 
- });
- $(function() {
+        var contentsOfOldDiv = JSON.parse(localStorage["day1"]);
+        $("#day1").html(contentsOfOldDiv);
+    }
+});
+$(function () {
     if (localStorage["day2"] != null) {
-       var contentsOfOldDiv = JSON.parse(localStorage["day2"]);    
-       $("#day2").html(contentsOfOldDiv);
-      } 
- });
- $(function() {
+        var contentsOfOldDiv = JSON.parse(localStorage["day2"]);
+        $("#day2").html(contentsOfOldDiv);
+    }
+});
+$(function () {
     if (localStorage["day3"] != null) {
-       var contentsOfOldDiv = JSON.parse(localStorage["day3"]);    
-       $("#day3").html(contentsOfOldDiv);
-      } 
- });
- $(function() {
+        var contentsOfOldDiv = JSON.parse(localStorage["day3"]);
+        $("#day3").html(contentsOfOldDiv);
+    }
+});
+$(function () {
     if (localStorage["day4"] != null) {
-       var contentsOfOldDiv = JSON.parse(localStorage["day4"]);    
-       $("#day4").html(contentsOfOldDiv);
-      } 
- });
- $(function() {
+        var contentsOfOldDiv = JSON.parse(localStorage["day4"]);
+        $("#day4").html(contentsOfOldDiv);
+    }
+});
+$(function () {
     if (localStorage["day5"] != null) {
-       var contentsOfOldDiv = JSON.parse(localStorage["day5"]);    
-       $("#day5").html(contentsOfOldDiv);
-      } 
- });
+        var contentsOfOldDiv = JSON.parse(localStorage["day5"]);
+        $("#day5").html(contentsOfOldDiv);
+    }
+});
+$(function () {
+    if (localStorage["uv"] != null) {
+        var contentsOfOldDiv = (localStorage["uv"]);
+        $("#UV").html(contentsOfOldDiv);
+    }
+});
 
 function getWeatherInfo() {
 
@@ -83,6 +89,26 @@ function getWeatherInfo() {
             var pSix = $("<p>").text(UV);
             UVDiv.append(pSix);
             $("#current-weather").append(UVDiv);
+
+            if (response.value < 3) {
+                $("#UV").add("textarea").css("background-color", "#008000");
+            }
+            else if (response.value <= 5 && response.value >= 3) {
+                $("#UV").add("textarea").css("background-color", "#FFFF00");
+            }
+            else if (response.value <= 7 && response.value >= 6) {
+                $("#UV").add("textarea").css("background-color", "#FFA500");
+            }
+            else if (response.value <= 10 && response.value >= 8) {
+                $("#UV").add("textarea").css("background-color", "#FF0000");
+            }
+            else
+                $("#UV").add("textarea").css("background-color", "#EE82EE");
+
+     
+            });
+       $(function () {
+                localStorage["uv"] = JSON.stringify($("#current-weather").html());
         });
 
         var cityNameDiv = $("<div id='cityName'>");
@@ -116,11 +142,11 @@ function getWeatherInfo() {
         $("#current-weather").append(windSpeedDiv);
 
 
-        $(function() {
+        $(function () {
             localStorage["currentWeather"] = JSON.stringify($("#current-weather").html());
-          });
-         
-         
+        });
+
+
 
     })
 
@@ -287,21 +313,21 @@ function getWeatherInfo() {
         $("#day5").append(day5TempCelciusDiv);
         $("#day5").append(day5HumidityDiv);
 
-        $(function() {
+        $(function () {
             localStorage["day1"] = JSON.stringify($("#day1").html());
-          });
-          $(function() {
+        });
+        $(function () {
             localStorage["day2"] = JSON.stringify($("#day2").html());
-          });
-          $(function() {
+        });
+        $(function () {
             localStorage["day3"] = JSON.stringify($("#day3").html());
-          });
-          $(function() {
+        });
+        $(function () {
             localStorage["day4"] = JSON.stringify($("#day4").html());
-          });
-          $(function() {
+        });
+        $(function () {
             localStorage["day5"] = JSON.stringify($("#day5").html());
-          });
+        });
 
 
 
@@ -317,7 +343,7 @@ function renderButtons() {
         a.attr("data-name", citys[i]);
         a.text(citys[i]);
         $("#searchHistory").append(a)
-    } console.log(citys)
+    }
 }
 
 $("#add-city").on("click", function (event) {
@@ -325,7 +351,6 @@ $("#add-city").on("click", function (event) {
     const cityInput = $("#city-input").val().trim();
     citys.push(cityInput)
     renderButtons();
-
 
     $(".history").on("click", function (event) {
         event.preventDefault();
