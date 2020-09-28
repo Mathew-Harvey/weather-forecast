@@ -9,16 +9,58 @@ currentTime();
 setInterval(currentTime, 1000);
 
 
-function clearWeather() {
-    $("#clear-weather").on("click", function (event) {
-        event.preventDefault();
-        $("#current-weather").html('')
-    })
-}
+
 
 $(document).on("click", ".city-btn", getWeatherInfo);
 renderButtons();
+
+$(function() {
+    if (localStorage["currentWeather"] != null) {
+       var contentsOfOldDiv = JSON.parse(localStorage["currentWeather"]);    
+       $("#current-weather").html(contentsOfOldDiv);
+      } 
+ });
+ $(function() {
+    if (localStorage["day1"] != null) {
+       var contentsOfOldDiv = JSON.parse(localStorage["day1"]);    
+       $("#day1").html(contentsOfOldDiv);
+      } 
+ });
+ $(function() {
+    if (localStorage["day2"] != null) {
+       var contentsOfOldDiv = JSON.parse(localStorage["day2"]);    
+       $("#day2").html(contentsOfOldDiv);
+      } 
+ });
+ $(function() {
+    if (localStorage["day3"] != null) {
+       var contentsOfOldDiv = JSON.parse(localStorage["day3"]);    
+       $("#day3").html(contentsOfOldDiv);
+      } 
+ });
+ $(function() {
+    if (localStorage["day4"] != null) {
+       var contentsOfOldDiv = JSON.parse(localStorage["day4"]);    
+       $("#day4").html(contentsOfOldDiv);
+      } 
+ });
+ $(function() {
+    if (localStorage["day5"] != null) {
+       var contentsOfOldDiv = JSON.parse(localStorage["day5"]);    
+       $("#day5").html(contentsOfOldDiv);
+      } 
+ });
+
 function getWeatherInfo() {
+
+    $("#current-weather").html("")
+    $("#day1").html("")
+    $("#day2").html("")
+    $("#day3").html("")
+    $("#day4").html("")
+    $("#day5").html("")
+
+
 
     var citytosearch = $("#city-input").val().trim();
 
@@ -72,6 +114,13 @@ function getWeatherInfo() {
         $("#current-weather").append(tempCelciusDiv);
         $("#current-weather").append(humidityDiv);
         $("#current-weather").append(windSpeedDiv);
+
+
+        $(function() {
+            localStorage["currentWeather"] = JSON.stringify($("#current-weather").html());
+          });
+         
+         
 
     })
 
@@ -238,6 +287,23 @@ function getWeatherInfo() {
         $("#day5").append(day5TempCelciusDiv);
         $("#day5").append(day5HumidityDiv);
 
+        $(function() {
+            localStorage["day1"] = JSON.stringify($("#day1").html());
+          });
+          $(function() {
+            localStorage["day2"] = JSON.stringify($("#day2").html());
+          });
+          $(function() {
+            localStorage["day3"] = JSON.stringify($("#day3").html());
+          });
+          $(function() {
+            localStorage["day4"] = JSON.stringify($("#day4").html());
+          });
+          $(function() {
+            localStorage["day5"] = JSON.stringify($("#day5").html());
+          });
+
+
 
     })
 }
@@ -265,7 +331,7 @@ $("#add-city").on("click", function (event) {
         event.preventDefault();
         const historyCity = $(this).text()
         $("#city-input").val(historyCity);
-        console.log(historyCity)
+        getWeatherInfo();
 
     })
 })
