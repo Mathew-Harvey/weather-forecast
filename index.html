@@ -16,7 +16,6 @@
 </head>
 
 <body>
-
   <div class="container-fluid">
     <div class="container">
       <div class="row">
@@ -28,25 +27,20 @@
       </div>
       <div class="row">
         <div class="col-3" id="city">
-
-
           <h3>Search for a City</h3>
-
           <div id="searchBox">
             <input type="text" id="city-input" placeholder="type name of city here">
-            <button id="add-city" type="submit"class="fas fa-search city-btn button"> </button>
+            <button id="add-city" type="submit" class="fas fa-search city-btn button"> </button>
           </div>
-
-        <div id="searchHistory">
-
-        </div>
-
-
-
+          <div id="searchHistory">
+          </div>
         </div>
 
         <div class="col-9" id="weather-container">
+          <div id="currentWeatherIcon"></div>
           <div id="current-weather"></div>
+          <div id="uv"></div>
+
           <div id="forecast-weather">
             <div id="day1"></div>
             <div id="day2"></div>
@@ -54,17 +48,9 @@
             <div id="day4"></div>
             <div id="day5"></div>
           </div>
-
-
         </div>
-
       </div>
-    </div>
-
-
-  </div>
-
-
+ 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="./assets/script.js"></script>
