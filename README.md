@@ -4,4 +4,4 @@ Project Location: https://github.com/Mathew-Harvey/weather_forcast
 
 Web application deployed here: https://mathew-harvey.github.io/weather_forcast/
 
-ScreenShot: <img src="./myimage.jpg">
+ScreenShot: <img src="./screenshot.jpg">
