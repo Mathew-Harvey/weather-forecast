@@ -88,14 +88,14 @@ function getWeatherInfo() {
 
     var citytosearch = $("#city-input").val().trim();
 
-    var weatherQueryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + citytosearch + "&appid=" + APIKey;
+    var weatherQueryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + citytosearch + "&appid=" + APIKey;
     $.ajax({
         url: weatherQueryURL,
         method: "GET"
     }).then(function (response) {
         var lat = response.coord.lat;
         var long = response.coord.lon;
-        var uvQueryURL = "http://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + long + "&appid=" + APIKey;
+        var uvQueryURL = "https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + long + "&appid=" + APIKey;
 
         $.ajax({
             url: uvQueryURL,
@@ -166,14 +166,14 @@ function getWeatherInfo() {
         });
     })
 
-    var forcastQueryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + citytosearch + "&appid=" + APIKey;
+    var forcastQueryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + citytosearch + "&appid=" + APIKey;
     $.ajax({
         url: forcastQueryURL,
         method: "GET"
     }).then(function (response) {
 
         //-- Day 1 [6]
-        var iconURL = "http://openweathermap.org/img/wn/" + response.list[6].weather[0].icon + "@2x.png";
+        var iconURL = "https://openweathermap.org/img/wn/" + response.list[6].weather[0].icon + "@2x.png";
 
         var day1DateDiv = $("<div id='day1Date'>");
         var day1WeatherDiv = $('<img src="' + iconURL + '">');
@@ -200,7 +200,7 @@ function getWeatherInfo() {
 
 
         //-- Day 2 [13]
-        var iconURL2 = "http://openweathermap.org/img/wn/" + response.list[13].weather[0].icon + "@2x.png";
+        var iconURL2 = "https://openweathermap.org/img/wn/" + response.list[13].weather[0].icon + "@2x.png";
 
         var day2DateDiv = $("<div id='day2Date'>");
         var day2WeatherDiv = $('<img src="' + iconURL2 + '">');
@@ -227,7 +227,7 @@ function getWeatherInfo() {
 
 
         //-- Day 3 [22]
-        var iconURL3 = "http://openweathermap.org/img/wn/" + response.list[22].weather[0].icon + "@2x.png";
+        var iconURL3 = "https://openweathermap.org/img/wn/" + response.list[22].weather[0].icon + "@2x.png";
 
         var day3DateDiv = $("<div id='day3Date'>");
         var day3WeatherDiv = $('<img src="' + iconURL3 + '">');
@@ -253,7 +253,7 @@ function getWeatherInfo() {
         $("#day3").append(day3HumidityDiv);
 
         //-- Day 4 [30]
-        var iconURL4 = "http://openweathermap.org/img/wn/" + response.list[30].weather[0].icon + "@2x.png";
+        var iconURL4 = "https://openweathermap.org/img/wn/" + response.list[30].weather[0].icon + "@2x.png";
 
         var day4DateDiv = $("<div id='day4Date'>");
         var day4WeatherDiv = $('<img src="' + iconURL4 + '">');
@@ -280,7 +280,7 @@ function getWeatherInfo() {
 
 
         //-- Day 5 [38]
-        var iconURL5 = "http://openweathermap.org/img/wn/" + response.list[38].weather[0].icon + "@2x.png";
+        var iconURL5 = "https://openweathermap.org/img/wn/" + response.list[38].weather[0].icon + "@2x.png";
 
         var day5DateDiv = $("<div id='day5Date'>");
         var day5WeatherDiv = $('<img src="' + iconURL5 + '">');
@@ -306,7 +306,7 @@ function getWeatherInfo() {
         $("#day5").append(day5HumidityDiv);
 
         //-- Current weather icon
-        var iconURL6 = "http://openweathermap.org/img/wn/" + response.list[0].weather[0].icon + "@2x.png";
+        var iconURL6 = "https://openweathermap.org/img/wn/" + response.list[0].weather[0].icon + "@2x.png";
         console.log(iconURL6)
 
         var currentWeatherIcon = $('<img src="' + iconURL6 + '">');
