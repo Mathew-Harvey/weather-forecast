@@ -1,7 +1,7 @@
-Project Description: This application displays the current and 5 day weather forecast for your chosen city in an intuative interface. The application also will store your recent searches and display them as buttons.
+<b>Project Description:</b><br> This application displays the current and 5 day weather forecast for your chosen city in an intuative interface. The application also will store your recent searches and display them as buttons.
 
-Project Location: https://github.com/Mathew-Harvey/weather_forcast
+<b>Project Location:</b> https://github.com/Mathew-Harvey/weather_forecast
 
-Web application deployed here: https://mathew-harvey.github.io/weather_forcast/
+<b>Web application deployed here:</b> https://mathew-harvey.github.io/weather_forecast/
 
-ScreenShot: <img src="./screenshot.jpg">
+<b>ScreenShot:</b> <img src="./screenshot.jpg">
